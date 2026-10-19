@@ -218,3 +218,36 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Project dependencies and local settings
+node_modules/
+.env
+.env.*
+!.env.example
+
+# Local datasets and generated artifacts; keep their instructions
+/data/*
+!/data/README.md
+/outputs/*
+!/outputs/README.md
+/web/public/models/*
+!/web/public/models/README.md
+
+# Videos, trained models and packaged applications
+*.mp4
+*.MP4
+*.mov
+*.MOV
+*.avi
+*.mkv
+*.ply
+*.splat
+*.ksplat
+*.spz
+*.pt
+*.pth
+*.ckpt
+*.exe
+
+# Office temporary files
+~$*
