@@ -23,7 +23,15 @@
 
 ## 当前内容
 
-仓库已收录现有的视频预处理命令行与桌面界面源码。其他技术模块先建立说明和交接要求，具体代码、模型与运行结果由对应负责人后续提交。项目方案见 [文档入口](docs/README.md)。
+仓库已实现第一阶段核心链路源码与交接记录：
+
+- `video_preprocessing/`：视频抽帧、初筛、人工复核与桌面界面。
+- `reconstruction/`：COLMAP 位姿解算（支持 `global_mapper`）、Brush 3DGS 训练及 `.ply`/`.splat` 检查转换脚本。
+- `stylization/`：`.splat` 属性审计与风格前后逐点比对工具（待补充风格训练/推理上游源码）。
+- `web/`：基于 Vite + Three.js + Spark（`@sparkjsdev/spark`）的最小模型查看器，读取 `configs/viewer_models.json`。
+- `docs/handoffs/`：第一阶段各模块交接记录与 [第一阶段验收汇总](docs/handoffs/stage1-acceptance.md)。
+
+项目方案总入口见 [文档入口](docs/README.md)。
 
 ## 启动现有预处理工具
 

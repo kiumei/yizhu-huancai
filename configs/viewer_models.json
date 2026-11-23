@@ -1,0 +1,46 @@
+{
+  "version": "1.0.0",
+  "coordinateNote": "Three.js 使用 +Y 向上坐标系；COLMAP / 3DGS 模型通常为 -Y 向上，由各模型 rotationDeg 与 position 统一对齐。",
+  "defaultModelId": "capture01_v1",
+  "models": [
+    {
+      "id": "capture01_v1",
+      "label": "自采写实初版 (capture01_v1)",
+      "category": "self_realistic",
+      "url": "/models/capture01_v1.splat",
+      "sourceVersion": "capture01_v1 / 10000 步 (464,680 点)",
+      "format": ".splat",
+      "rotationDeg": [180, 0, 0],
+      "position": [0, 0, 0],
+      "cameraPosition": [-9.5, 0.4, 6.2],
+      "cameraTarget": [-2.2, -1.6, -1.2],
+      "notes": "基于 COLMAP 首帧机位对齐，绕 X 轴旋转 180° 使房间正立，初始视角覆盖主书架、桌面与窗景。"
+    },
+    {
+      "id": "public_broche",
+      "label": "公开原版示例 (Broche)",
+      "category": "public_baseline",
+      "url": "/models/example-broche-rose-gold.splat",
+      "sourceVersion": "example-broche-rose-gold.splat (129,929 点)",
+      "format": ".splat",
+      "rotationDeg": [0, 0, 180],
+      "position": [0, 2, 0],
+      "cameraPosition": [-0.35, 0.9, -2.15],
+      "cameraTarget": [-0.25, 0.78, 0.45],
+      "notes": "公开原版参考模型；Z 轴旋转 180° 并抬升 Y=+2，从 -Z 正面机位直对花朵正立展示。"
+    },
+    {
+      "id": "style_vangogh",
+      "label": "风格示例：梵高星月夜 (Broche)",
+      "category": "public_stylized",
+      "url": "/models/vangogh_broche.splat",
+      "sourceVersion": "vangogh_broche.splat / output梵高风.splat (129,669 点)",
+      "format": ".splat",
+      "rotationDeg": [0, 0, 180],
+      "position": [0, 2, 0],
+      "cameraPosition": [-0.35, 0.9, -2.15],
+      "cameraTarget": [-0.25, 0.78, 0.45],
+      "notes": "第一阶段风格导出验证样本，与公开原版使用同一正面视角与坐标配置以便对照检查。"
+    }
+  ]
+}

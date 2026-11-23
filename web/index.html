@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>遗筑·幻彩 · 第一阶段三维高斯查看器</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="canvas-wrap" aria-label="三维场景画布"></div>
+
+      <aside id="hud" class="hud">
+        <header class="hud-header">
+          <div>
+            <h1>遗筑·幻彩 · 查看器</h1>
+            <p class="subtitle">第一阶段：模型接入与交互验证</p>
+          </div>
+          <button id="toggle-panel-btn" type="button" class="btn-ghost" title="收起或展开控制面板">收起</button>
+        </header>
+
+        <div id="hud-body" class="hud-body">
+          <section class="field">
+            <label for="model-select">预设模型</label>
+            <select id="model-select"></select>
+          </section>
+
+          <div class="actions">
+            <button id="reset-view-btn" type="button" class="btn-primary">返回初始视角</button>
+            <button id="reload-btn" type="button" class="btn-secondary">重新加载</button>
+          </div>
+
+          <section id="status-box" class="status status-loading" role="status" aria-live="polite">
+            <div class="status-row">
+              <span id="status-badge" class="badge">加载中</span>
+              <span id="fps-counter" class="fps">-- FPS</span>
+            </div>
+            <p id="status-message" class="status-msg">正在初始化查看器…</p>
+            <dl class="meta-list">
+              <div><dt>来源版本</dt><dd id="meta-version">-</dd></div>
+              <div><dt>高斯点数</dt><dd id="meta-splats">-</dd></div>
+              <div><dt>坐标对齐</dt><dd id="meta-transform">-</dd></div>
+            </dl>
+          </section>
+
+          <details class="test-entry">
+            <summary>模型替换与异常测试入口</summary>
+            <div class="test-content">
+              <div class="field">
+                <label for="custom-url-input">自定义模型 URL (.splat / .ply / .spz)</label>
+                <div class="inline-row">
+                  <input id="custom-url-input" type="text" placeholder="/models/example-broche-rose-gold.splat" />
+                  <button id="load-url-btn" type="button" class="btn-secondary">加载</button>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="local-file-input">从本机选择模型文件</label>
+                <input id="local-file-input" type="file" accept=".splat,.ply,.spz,.ksplat" />
+              </div>
+
+              <div class="inline-row">
+                <label class="checkbox-row">
+                  <input id="toggle-grid-input" type="checkbox" />
+                  <span>显示参考网格与坐标轴</span>
+                </label>
+              </div>
+
+              <div class="inline-row">
+                <button id="test-error-btn" type="button" class="btn-danger-outline">测试失败提示（404）</button>
+              </div>
+            </div>
+          </details>
+
+          <footer class="help-text">
+            操作：左键 / 单指旋转 · 滚轮 / 双指缩放 · 右键 / 双指平移
+          </footer>
+        </div>
+      </aside>
+
+      <div id="center-overlay" class="center-overlay" hidden>
+        <div class="overlay-card">
+          <div id="overlay-spinner" class="spinner" aria-hidden="true"></div>
+          <h2 id="overlay-title">正在加载模型</h2>
+          <p id="overlay-detail">请稍候…</p>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
